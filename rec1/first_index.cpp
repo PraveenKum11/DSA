@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define MOD 1000000007
+#define MOD1 998244353
+#define INF 1e18
+#define pb push_back
+#define ppb pop_back
+#define mp make_pair
+#define ff first
+#define ss second
+#define PI 3.141592653589793238462
+#define set_bits __builtin_popcountll
+#define sz(x) ((int)(x).size())
+#define all(x) (x).begin(), (x).end()
+#define REP(i,n) for(int (i)=0;(i)<(int)(n);(i)++)
+typedef vector<int> vi;
+typedef vector<long long> vll;
+typedef pair<int, int> pi;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double lld;
+// typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_order_statistics_node_update > pbds; // find_by_order, order_of_key
+#ifndef ONLINE_JUDGE
+#define debug(x) std::cerr << #x <<" "; _print(x); std::cerr << endl;
+#else
+#define debug(x)
+#endif
+void _print(ll t) {std::cerr << t;}
+void _print(int t) {std::cerr << t;}
+void _print(std::string t) {std::cerr << t;}
+void _print(char t) {std::cerr << t;}
+void _print(lld t) {std::cerr << t;}
+void _print(double t) {std::cerr << t;}
+void _print(ull t) {std::cerr << t;}
+template <class T, class V> void _print(std::pair <T, V> p);
+template <class T> void _print(std::vector <T> v);
+template <class T> void _print(std::set <T> v);
+template <class T, class V> void _print(std::map <T, V> v);
+template <class T> void _print(std::multiset <T> v);
+template <class T, class V> void _print(std::pair <T, V> p) {std::cerr << "{"; _print(p.ff); std::cerr << ","; _print(p.ss); std::cerr << "}";}
+template <class T> void _print(std::vector <T> v) {std::cerr << "[ "; for (T i : v) {_print(i); std::cerr << " ";} std::cerr << "]";}
+template <class T> void _print(std::set <T> v) {std::cerr << "[ "; for (T i : v) {_print(i); std::cerr << " ";} std::cerr << "]";}
+template <class T> void _print(std::multiset <T> v) {std::cerr << "[ "; for (T i : v) {_print(i); std::cerr << " ";} std::cerr << "]";}
+template <class T, class V> void _print(std::map <T, V> v) {std::cerr << "[ "; for (auto i : v) {_print(i); std::cerr << " ";} std::cerr << "]";}
+/*========================================================================================================================================================*/
+
+int idx(int arr[], int size, int toFind)
+{
+	if (size == 0)
+		return -1;
+	int smallOut = idx(arr + 1, size - 1, toFind);
+	if (arr[0] == toFind) return 0;
+	if (smallOut == -1) return -1;
+	return 1 + smallOut;
+}
+
+int firstIdx(int arr[], int size, int start, int toFind)
+{
+	if (start == size) return -1;
+	if (arr[start] == toFind) return start;
+	return firstIdx(arr, size, start + 1, toFind);
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	int arr[t];
+	REP(i, t) cin >> arr[i];
+	// debug(arr);
+	int toFind; cin >> toFind;
+	// cout << idx(arr, t, toFind);
+	cout << firstIdx(arr, t, 0, toFind);
+}
