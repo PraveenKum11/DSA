@@ -66,8 +66,8 @@ public:
 			{
 				if (dist[nbr] == INT_MAX)
 				{
-					dist[nbr] = dist[front] + 1;
 					q.push(nbr);
+					dist[nbr] = dist[front] + 1;
 				}
 			}
 		}
