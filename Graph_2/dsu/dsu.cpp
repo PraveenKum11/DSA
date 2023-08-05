@@ -63,7 +63,7 @@ public:
 		parent.resize(size);
 		for (int i = 0; i < size; i++)
 		{
-			parent[i] = i; 				// initially each element is it's own parent
+			parent[i] = i; 				// initially each element as it's own parent
 			rank[i] = 1;				// initailly each component is of size/rank 1
 		}
 	}

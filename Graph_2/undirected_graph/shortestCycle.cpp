@@ -46,6 +46,8 @@ public:
 					q.push(nbr);
 					dist[nbr] = dist[front] + 1;
 				}
+				// This is used to avoid parent, as the distance of parent node
+				// will always be less than the distance of child node in BFS.
 				else if (dist[nbr] >= dist[front])	// backedge found - cycle
 				{
 					ans = min(ans, dist[front] + dist[nbr] + 1);

@@ -2,7 +2,7 @@
 using namespace std;
 
 // NOTE: Cycle is present if we can reach a already visited node again and that node is
-//		 note equal to the parent of that node.
+//		 not equal to the parent of that node.
 
 template <typename T>
 class Graph

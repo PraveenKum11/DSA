@@ -46,7 +46,7 @@ public:
 	}
 
 //  NOTE: Just dfs traverse the graph and add the nodes to the front of
-//		  result just before leaving (adding to prevent reverse order).
+//		  result just before leaving (adding to front prevent reverse order).
 	void topologicalSort()
 	{
 		list<int> result;
